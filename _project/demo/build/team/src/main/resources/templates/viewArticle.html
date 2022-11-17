@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+    <meta charset="UTF-8">
+    <title>Title</title>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">번호</th>
+        <th scope="col">제목</th>
+        <th scope="col">내용</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <th th:text="${viewArticle.getBoard_id()}"></th>
+        <td th:text="${viewArticle.getTitle()}"></td>
+        <td th:text="${viewArticle.getContent()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="button">
+    <div class="row">
+        <div class="col">
+            <form action="/board/delete-article">
+                <input th:type="hidden" th:name="board_id" th:value="${viewArticle.getBoard_id()}">
+                <button class="w-100 btn btn-secondary btn-lg" type="submit"
+                th:onclick="|location.href='@{/board/delete-article}'|">
+                    삭제
+                </button>
+            </form>
+            <form action="/board/update-article">
+                <input th:type="hidden" th:name="board_id" th:value="${viewArticle.getBoard_id()}">
+                <input th:type="hidden" th:name="board_pw" th:value="${viewArticle.getBoard_pw()}">
+                <button class="w-100 btn btn-secondary btn-lg" type="submit"
+                        th:onclick="|location.href='@{/board/update-article}'|">
+                    수정
+                </button>
+            </form>
+            <button class="w-100 btn btn-secondary btn-lg" type="button"
+                    th:onclick="|location.href='@{/board/list}'|">
+                목록
+            </button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

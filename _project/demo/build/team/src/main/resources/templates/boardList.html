@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<body>
+<!--[[${articles.toString()}]]-->
+<!-- 리스트 테이블 -->
+<table>
+  <thead>
+  <tr>
+    <th scope="col">번호</th>
+    <th scope="col">제목</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="article : ${articles.getList()}">
+    <th th:text="${article.getBoard_id()}"></th>
+    <td>
+      <a th:href="@{/board/view-article(id=${article.getBoard_id()})}" th:text="${article.getTitle()}"></a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<!-- 페이징 -->
+<nav>
+  <ul th:if="${!(articles.startRow == 0)}">
+
+    <!-- getPrePage : 이전 페이지 -->
+    <li th:classappend="${!articles.hasPreviousPage} ? 'disabled'">
+<!--    <li th:disabled="${!articles.hasPreviousPage}">-->
+      <!-- href: /page?pageNum=이전페이지&keyword=검색분류&search=검색어 -->
+      <a th:class="pre-link" th:href="@{/board/list(pageNum=${articles.getPrePage()})}">Previous</a>
+    </li>
+
+    <!-- getNavigateFirstPage() : 페이징의 처음 숫자 getNavigateLastPage : 페이징의 마지막 숫자를 이용해 페이징 숫자 출력 -->
+    <!-- href : /page?pageNum=선택한 페이지&keyword=검색분류&search=검색어 -->
+    <li th:each="page: ${#numbers.sequence(articles.getNavigateFirstPage(), articles.getNavigateLastPage())}" th:classappend="${page == articles.getPageNum()} ? 'active'">
+      <a th:text="${page}" th:href="@{/board/list(pageNum=${page})}"></a>
+    </li>
+
+    <!-- getPrePage : 다음 페이지 -->
+    <li th:classappend="${articles.getNextPage() == 0} ? 'disabled'">
+      <!-- href: /page?pageNum=다음페이지&keyword=검색분류&search=검색어 -->
+      <a th:href="@{/board/list(pageNum=${articles.getNextPage()})}">Next</a>
+    </li>
+
+  </ul>
+</nav>
+
+<div class="button">
+  <div class="row">
+    <div class="col">
+      <button class="w-100 btn btn-secondary btn-lg" type="button"
+              th:onclick="|location.href='@{/}'|">
+        홈으로
+      </button>
+      <button class="w-100 btn btn-secondary btn-lg" type="button"
+              th:onclick="|location.href='@{/board/write-article}'|">
+        새글 쓰기
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
