@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="threadTest.RootController">
+   <children>
+      <AnchorPane layoutX="-12.0" prefHeight="96.0" prefWidth="300.0">
+         <children>
+            <Label layoutX="47.0" layoutY="39.0" text="현재시간">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf1" layoutX="116.0" layoutY="37.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
