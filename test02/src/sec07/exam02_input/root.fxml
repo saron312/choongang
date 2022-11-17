@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="sec07.exam02_input.RootController"
+	prefHeight="150" prefWidth="250" >
+   <children>
+      <Label layoutX="22.0" layoutY="36.0" text="숫자1" />
+      <TextField fx:id="txtTitle" layoutX="84.0" layoutY="32.0" prefHeight="23.0" prefWidth="132.0" />
+      <Label layoutX="22.0" layoutY="69.0" text="숫자2" />
+      <TextField fx:id="txtNum" layoutX="84.0" layoutY="65.0" prefHeight="23.0" prefWidth="132.0" />
+      
+      <Button fx:id="btnAdd" layoutX="20.0" layoutY="120" text="더하기" onAction="#handleBtnAction"/>
+      <Button fx:id="btnMinus" layoutX="80.0" layoutY="120" text="빼기" onAction="#handleBtnAction"/>
+      <Button fx:id="btnMulti" layoutX="128.0" layoutY="120" text="곱하기" onAction="#handleBtnAction"/>
+      <Button fx:id="btnCancel" layoutX="188.0" layoutY="120" text="취소" onAction="#handleBtnCancelAction"/>
+   </children>
+</AnchorPane>
