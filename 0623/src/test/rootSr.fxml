@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="test.RootController">
+   <children>
+      <AnchorPane prefHeight="444.0" prefWidth="455.0">
+         <children>
+            <Label layoutX="92.0" layoutY="45.0" text="사번입력" />
+            <TextField fx:id="inputempId" layoutX="158.0" layoutY="41.0" />
+            <TextField fx:id="result" alignment="CENTER" layoutX="158.0" layoutY="71.0" prefHeight="23.0" prefWidth="138.0" />
+            <TextField fx:id="tfempId" layoutX="99.0" layoutY="102.0" prefHeight="23.0" prefWidth="54.0" />
+            <TextField fx:id="tfempname" layoutX="184.0" layoutY="102.0" prefHeight="23.0" prefWidth="112.0" />
+            <TextField fx:id="tfsalary" layoutX="328.0" layoutY="102.0" prefHeight="23.0" prefWidth="61.0" />
+            <Button fx:id="btn" layoutX="310.0" layoutY="41.0" mnemonicParsing="false" text="찾기" />
+            <Label layoutX="73.0" layoutY="106.0" text="사번" />
+            <Label layoutX="158.0" layoutY="106.0" text="이름" />
+            <Label layoutX="301.0" layoutY="106.0" text="월급" />
+            <Label layoutX="92.0" layoutY="145.0" text="월급입력" />
+            <TextField fx:id="inputSalary" alignment="CENTER" layoutX="153.0" layoutY="141.0" prefHeight="23.0" prefWidth="138.0" />
+            <Button fx:id="btn2" layoutX="308.0" layoutY="141.0" mnemonicParsing="false" text="수정" />
+            <TextField fx:id="modiResult" alignment="CENTER" layoutX="153.0" layoutY="172.0" prefHeight="23.0" prefWidth="138.0" />
+            <TextArea fx:id="empList" layoutX="19.0" layoutY="204.0" prefHeight="190.0" prefWidth="417.0" />
+            <Button fx:id="btn3" layoutX="202.0" layoutY="401.0" mnemonicParsing="false" text="조회" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
