@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link th:href="@{/css/bootstrap.min.css}"
+          href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <table width="500" cellpadding="0" cellspacing="0" border="1">
+        <form action="/board/write-article" method="post">
+            <tr>
+                <td > 제목 </td>
+                <td> <input type="text" name="title" size = "100"> </td>
+            </tr>
+            <tr>
+                <td> 내용 </td>
+                <td> <input type="text" name="content" size = "100" > </td>
+            </tr>
+            <tr>
+                <td> 게시글 비밀번호 </td>
+                <td> <input type="password" name="board_pw" size = "100" > </td>
+            </tr>
+            <tr >
+                <td colspan="2">
+                <input type="submit" value="입력">
+                <a href="list">목록보기</a></td>
+            </tr>
+        </form>
+    </table>
+</body>
+</html>
