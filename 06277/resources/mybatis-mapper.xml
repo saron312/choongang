@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mybatis">
+
+	<insert id = "insertEx0621">
+		insert into ex0621(emp_id, emp_name,emp_salary) values (700,'홍길동',900)
+	</insert>
+	
+	<select id="selectName" parameterType="int" resultType ="string">
+		select emp_name from ex0621 where emp_id = #{emp_id} 
+	</select>
+	
+	<insert id = "insertEx" parameterType="common.Emp">
+		insert into ex0621(emp_id,emp_name,emp_salary) values(#{employee_id},#{name},#{salary})
+	</insert>
+	
+</mapper>
